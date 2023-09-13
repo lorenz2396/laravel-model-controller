@@ -7,28 +7,29 @@ Homepage
 @endsection --}}
 
 @section('main-content')
-<div class="container">
-    <div class="row">
-        <div class="col">
-            Movie
-        </div>
-    </div>
-
-    <div class="row">
-        @foreach ($movies as $movie)
-        <div class="col-12 col-sm-4 col-md-3 col-lg-2">
-            <div class="card">
-                <div class="card-body">
-                    <h2>
-                        {{ $movies->title }}
-                    </h2>
-
-                    <a href="{{ route('show.movie', ['id' => $movies->id]) }}" class="btn btn-primary">
-                        Check Single Movie
-                    </a>
+    <main>
+        <h1 class="text-center m-4">
+            Movies
+        </h1>
+        <div class="comic-container py-4">
+            <div class="container">
+                <div class="row row-cols-5 g-3">
+                    @foreach ($movies as $movie)
+                        <div class="col">
+                            <div class="card">
+                                <div class="card-body">
+                                    <img src="{{ $movie->image }}" alt="">
+                                    <h5 class="card-title">{{ $movie->title }}</h5>
+                                    <a href="{{ route('movie.show', ['id' => $movie->id] ) }}" class="btn btn-primary">
+                                        Check single film
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
                 </div>
             </div>
         </div>
-    </div>
-</div>
+    </main>
+        
 @endsection

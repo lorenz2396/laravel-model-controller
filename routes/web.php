@@ -22,4 +22,4 @@ Route::get('/movies/{id}', [MainController::class, 'singleMovie'])-> name('movie
 
 Route::get('/contatti', function () {
     return view('contact');
-});
+})-> name('contacts');

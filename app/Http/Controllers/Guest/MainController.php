@@ -15,7 +15,7 @@ class MainController extends Controller
         //Select * from Movies
         $movies = Movie::all();
 
-        return view ('home', [
+        return view ('home', [   // = compact 
             'movies' => $movies
         ]); //secondo argomento view key diveta variabile
     }
@@ -23,15 +23,15 @@ class MainController extends Controller
     public function singleMovie($id)
     {
 
-        //SELECT * FROM movies WGERE id = $id
+        //SELECT * FROM movies WHERE id = $id
         $movie = Movie::findOrFail($id);
 
         // if (!$movie){
         //     abort(404);
         // }
 
-        return view('singleMovie', [
-            'movies' => $movie
+        return view('single-movie', [
+            'movie' => $movie
         ]);
     }
 }
