@@ -1,10 +1,16 @@
-# Passi post-clone di una repo di Laravel
-1. Clono la repo del nuovo esercizio (che probabilmente è la copia del template)
-2. Copio il file .env.example e lo rinomino in .env (senza cancellare il file .env.example)
-3. Apro il terminale ed eseguo il comando composer install
-4. Dopo l'esecuzione di composer install, eseguo nel terminale il comando php artisan key:generate
-5. Dopo l'esecuzione di php artisan key:generate, eseguo nel terminale il comando npm i
-6. Dopo l'esecuzione di npm i:
-    a. Avvio il server di Laravel con php artisan serve e di fianco avvio npm run dev
-    b. Eseguo il comando npm run build e poi avvio il server di Laravel con php artisan serve
+# Esercizio 
 
+Oggi facciamo la nostra prima vera interazione con il database utilizzando l'ORM di Laravel.
+
+    1 - Create un nuovo progetto Laravel 10
+    2 - tramite phpMyAdmin create un nuovo database laravel_model_controller
+    3 - Importate nel vostro database la tabella movies in allegato
+    4 - inserite le vostre credenziali per il database nel file .env
+    5 - Create un model Movie
+    php artisan make:model Movie
+    6 - Create un controller che gestirà la rotta /
+    php artisan make:controller Guest/PageController
+    7 - All'interno della funzione index() del controller, recuperate tutti i film dal database e passateli alla view, che quindi li visualizzerà a schermo, tramite delle card.
+
+BONUS:
+Stilare il layout nei dettagli con Sass (modificato) 

@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 
+//importazione dei Controllers
+use App\Http\Controllers\Guest\MainController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,23 +16,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    $students = [
-        'Marco',
-        'Gino',
-        'Claudia',
-    ];
+Route::get('/', [MainController::class, 'index'])-> name('home');
 
-    $data = compact('students');
-
-    // dd($data);
-
-    return view('home', $data);
-
-    // return view('home', [
-    //     'students' => $students
-    // ]);
-});
+Route::get('/movies/{id}', [MainController::class, 'singleMovie'])-> name('movie.show');
 
 Route::get('/contatti', function () {
     return view('contact');
