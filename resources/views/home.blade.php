@@ -18,7 +18,6 @@ Homepage
                         <div class="col">
                             <div class="card">
                                 <div class="card-body">
-                                    <img src="{{ $movie->image }}" alt="">
                                     <h5 class="card-title">{{ $movie->title }}</h5>
                                     <a href="{{ route('movie.show', ['id' => $movie->id] ) }}" class="btn btn-primary">
                                         Check single film

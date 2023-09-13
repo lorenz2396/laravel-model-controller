@@ -17,7 +17,6 @@ Homepage
                     <div class="col">
                         <div class="card">
                             <div class="card-body">
-                                <img src="{{ $movie->image }}" alt="">
                                 <ul>
                                     <li>
                                         {{ $movie->original_title }}
